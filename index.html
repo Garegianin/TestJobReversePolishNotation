@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратная польская нотация</title>
+    <script src="script.js"></script>
+</head>
+<body style="background-color:rgb(220, 195, 161)">
+    <div style="text-align:center; padding:15px; background-color: blanchedalmond;">
+        <h1>Тестовое задание</h1>
+        <p>Требуется реализовать функцию, которая принимает на вход выражение в виде строки и преобразует его <br>
+            к выражению записанному в обратной польской нотации.<br>
+            + юнит тест(ы).
+        </p>
+    </div>
+    <hr style="padding:15px; background-color:rgb(248, 225, 196);">
+    <div style="text-align:center; padding:15px; background-color:antiquewhite;">
+        <form style="margin-bottom:20px">
+            Ввод:<br>
+            <input type="text" name="input1" id="input1" style="width: 210px;">
+            <input type="button" value="Выполнить"  onclick="MInpRPN(this.form)">
+            <br>
+            Результат:<br>
+            <textarea name="read1" id="read1" style="width: 300px; height: 50px;"></textarea>
+        </form>
+        <form>
+            <input type="button" value="Выполнить юнит тест(ы)"  onclick="UnitTest(this.form)">
+            <br>
+            Результат:<br>
+            <textarea name="read2" id="read2" style="width: 750px; height: 60px;"></textarea>
+        </form>
+    </div>
+</body>
+<script>//запрет на ввод определённых значений
+let input1 = document.querySelector('#input1'); 
+let invl = /[!$|'"`№?_=&:;%#@~№^]/g;
+input1.oninput = function(){ 
+    this.value = this.value.replace(invl, ''); 
+}
+</script>
+</html>
